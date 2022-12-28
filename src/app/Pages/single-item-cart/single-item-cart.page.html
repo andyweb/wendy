@@ -1,0 +1,27 @@
+<ion-content>
+  <h4 class="item-name">{{data?.name}}</h4>
+  <p class="item-description">{{data?.desc}}</p>
+  <h4 class="price-tag">€ {{data?.price}}</h4>
+
+  <div class="cart-adjust-section">
+    <a class="btn-circle" (click)="productClick('minus',data)">
+      <ion-icon
+        slot="icon-only"
+        src="../../../assets/svg-icon/minus.svg"
+      ></ion-icon>
+    </a>
+    <h2 class="cart-number-label">{{data?.qty}}</h2>
+    <a class="btn-circle" (click)="productClick('add',data)">
+      <ion-icon
+        slot="icon-only"
+        src="../../../assets/svg-icon/add.svg"
+      ></ion-icon>
+    </a>
+  </div>
+  <ion-label class="text-label">Eventuali richieste</ion-label>
+  <ion-textarea rows="4" [(ngModel)]="description" placeholder="Es. Senza Capperi..."></ion-textarea>
+
+  <ion-button class="ion-text-capitalize btn-ordine" (click)="doCreate()">
+    Aggiungi al tuo ordine
+  </ion-button>
+</ion-content>

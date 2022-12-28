@@ -1,0 +1,85 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" class="btn-profile">
+        <ion-icon
+          slot="icon-only"
+          src="./assets/svg-icon/profile.svg"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <div class="logo-section">
+      <img src="./assets/images/header-logo.svg" alt="" />
+    </div>
+    <!-- <ion-title>Home</ion-title> -->
+    <ion-buttons slot="end">
+      <ion-button fill="clear" class="btn-filter">
+        <ion-icon
+          slot="icon-only"
+          src="./assets/svg-icon/filter.svg"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar class="search-toolbar">
+    <ion-searchbar mode="md" placeholder="Cerca..."></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="cart-header">
+    <a class="back-menu"> <ion-icon name="chevron-back"></ion-icon> Indietro</a>
+    <h4 class="ion-text-center title-text">Pagamento</h4>
+  </div>
+  <div class="order-info-section">
+    <div class="cart-item-list">
+      <h4 class="title">Articoli</h4>
+      <p class="item-info">1 Pizza Napoli</p>
+      <p class="item-info">1 Birra Peroni 0,33 cl</p>
+    </div>
+    <div class="order-info">
+      <h4 class="title">Consegna</h4>
+      <p class="address">Chalet Sapore di mare Ombrellone n. 88</p>
+      <p class="order-time">
+        <ion-icon slot="icon-only" src="./assets/svg-icon/clock.svg"></ion-icon>
+        ore 12:30
+      </p>
+    </div>
+  </div>
+  <h4 class="payment-option-title">Modalità di pagamento</h4>
+  <div class="payment-option active-payment">
+    <img src="../../../assets/images/paypal.png" alt="" />
+  </div>
+  <div class="payment-option">
+    <div class="multi-image">
+      <img class="mr-14" src="../../../assets/images/Apple-Pay.png" alt="" />
+      <img src="../../../assets/images/google-pay.png" alt="" />
+    </div>
+  </div>
+  <div class="payment-option">
+    <div class="multi-image">
+      <p class="text-label">Credit Card:</p>
+      <img class="mr-16" src="../../../assets/images/Maestro.png" alt="" />
+      <img class="mr-16" src="../../../assets/images/visa.png" alt="" />
+      <img
+        class="mr-16"
+        src="../../../assets/images/american-express.png"
+        alt=""
+      />
+      <img src="../../../assets/images/cirrus.png" alt="" />
+    </div>
+  </div>
+  <div class="payment-option cash-option">
+    <h5 class="label-title">Pay Cash</h5>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <div class="total-section">
+      <p class="total-value">Totale: <span>11,29 €</span></p>
+      <a class="btn-confirm" (click)="doPay()">
+        Paga <ion-icon name="chevron-forward-outline"></ion-icon>
+      </a>
+    </div>
+  </ion-toolbar>
+</ion-footer>

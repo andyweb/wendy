@@ -1,0 +1,7 @@
+{
+  "name": "orderocket",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

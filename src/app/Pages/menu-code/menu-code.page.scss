@@ -1,0 +1,104 @@
+ion-header {
+  ion-toolbar {
+    .btn-flag {
+      --padding-start: 0px;
+      --padding-end: 0px;
+      height: 25px;
+      width: 25px;
+      
+      border-radius: 10px;
+      margin-right: 16px;
+      img {
+        border-radius: 10px;
+        height: 100%;
+        width: 100%;
+      }
+    }
+    --background: #e61b75; 
+  }
+}
+ion-content {
+  --padding-start: 30px;
+  --padding-end: 30px;
+
+  .title-1 {
+    font-size: 20px;
+    font-family: "inter_bold";
+    color: var(--ion-color-wendy);
+    margin-bottom: 2px;
+    margin-top: 4vh;
+    line-height: 25px;
+  }
+  .title-2 {
+    font-size: 20px;
+    font-family: "inter_regular";
+    color: var(--ion-color-wendy);
+    margin-top: 0px;
+    line-height: 25px;
+  }
+  .qr-title {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 5vh;
+    font-family: "inter_regular";
+  }
+  .scanner-section {
+    position: relative;
+    .arrow-icon {
+      font-size: 26px;
+      position: absolute;
+      top: -8px;
+      right: 8vw;
+    }
+    .barcode-section {
+      height: 200px;
+      width: 200px;
+      box-shadow: 0px 4px 7px 0px rgb(0 0 0 / 25%);
+      border-radius: 5px;
+      margin: 0px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .barcode {
+        text-align: center;
+        .qr-code-title {
+          font-size: 15px;
+          font-family: "inter_bold";
+          color: var(--ion-color-wendy);
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+
+  .non-rec-title {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 4vh;
+    font-family: "inter_regular";
+  }
+  .input-box {
+    --placeholder-color: var(--ion-color-blue);
+    --placeholder-opacity: 1;
+    font-family: "inter_regular";
+    font-size: 15px;
+    border: 1px solid var(--ion-color-blue);
+    border-radius: 5px;
+    color: var(--ion-color-blue);
+    max-width: 18rem;
+    margin: 0px auto;
+    --padding-start:8px;
+  }
+}
+ion-footer {
+  ion-toolbar {
+    padding: 4px 20px;
+    --background: #29235c;
+  }
+}
+
+.accedi {
+  color: #fff;
+  font-weight: bold;
+  font-size: 22px;
+}

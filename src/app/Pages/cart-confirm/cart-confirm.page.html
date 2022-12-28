@@ -1,0 +1,69 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button class="btn-profile"></ion-back-button>
+    </ion-buttons>
+    <div class="logo-section">
+      <img src="./assets/images/hlogo.png"  width="30%" alt="" />
+    </div>
+    <!-- <ion-title>Home</ion-title> -->
+    <ion-buttons slot="end">
+      <ion-button fill="clear" class="btn-filter">
+        <ion-icon
+          slot="icon-only"
+          src="./assets/svg-icon/filter.svg"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+  <div class="cart-header">
+   
+    <h4 class="ion-text-center title-text"  *ngIf="total > 0">Riepilogo Ordine</h4>
+    <h4 class="ion-text-center title-text"  *ngIf="total === 0">Carrello vuoto!</h4>
+  </div>
+  <div>
+    <ion-item lines="full" *ngFor="let item of local">
+      <ion-label>
+        <div class="item-bage pizza-bage">{{item?.cat}}</div>
+        <h4 class="item-name">{{item?.name}}</h4>
+        <p class="item-desc">{{item?.description}}</p>
+      </ion-label>
+      <div slot="end" class="right-section">
+        <div class="adjust-section">
+          <a class="btn-adjust" (click)="cartUpdate('minus',item)">
+            <ion-icon name="remove"></ion-icon>
+          </a>
+          <h4 class="adjust-value" (click)="cartUpdate('add',item)">{{item?.qty}}</h4>
+          <a class="btn-adjust"><ion-icon name="add"></ion-icon></a>
+        </div>
+        <h4 class="item-price">€ {{item?.price}}</h4>
+        <a class="btn-delete" (click)="deleteProduct(item)">
+          <ion-icon
+            slot="icon-only"
+            src="./assets/svg-icon/delete.svg"
+          ></ion-icon>
+        </a>
+      </div>
+    </ion-item>
+  </div>
+  <div align="center" *ngIf="total === 0">
+    <img src="./assets/images/emptycart.png">
+  </div>
+</ion-content>
+<ion-footer>
+  <!-- <ion-toolbar>
+    <input type="time" />
+  </ion-toolbar> -->
+  <ion-toolbar>
+    <div class="total-section">
+      <p class="total-value">Totale: <span>{{total}} €</span></p>
+      <a *ngIf="total > 0" class="btn-confirm" (click)="goToConfirm()">
+        Conferma <ion-icon name="chevron-forward-outline"></ion-icon>
+      </a>
+    </div>
+  </ion-toolbar>
+</ion-footer>

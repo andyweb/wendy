@@ -1,0 +1,49 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button fill="clear" class="btn-profile">
+        <ion-icon
+          slot="icon-only"
+          src="./assets/svg-icon/profile.svg"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <div class="logo-section">
+      <img src="./assets/images/header-logo.svg" alt="" />
+    </div>
+    <!-- <ion-title>Home</ion-title> -->
+    <ion-buttons slot="end">
+      <ion-button fill="clear" class="btn-filter">
+        <ion-icon
+          slot="icon-only"
+          src="./assets/svg-icon/filter.svg"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar class="search-toolbar">
+    <ion-searchbar mode="md" placeholder="Cerca..."></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-icon
+    class="hand-icon"
+    src="../../../assets/svg-icon/hands.svg"
+  ></ion-icon>
+  <h1 class="thanks-title">
+    Grazie per il tuo <br />
+    ordine!
+  </h1>
+  <div class="steper-section">
+    <h4 class="steper-title">Ordine preso in carico</h4>
+    <ion-progress-bar value="0.5" mode="ios"></ion-progress-bar>
+    <h4 class="steper-title">In preparazione</h4>
+    <ion-progress-bar mode="ios"></ion-progress-bar>
+    <h4 class="steper-title">In consegna</h4>
+    <ion-progress-bar mode="ios"></ion-progress-bar>
+    <div class="bottom-circle">
+      <ion-icon name="chevron-down-outline"></ion-icon>
+    </div>
+  </div>
+</ion-content>

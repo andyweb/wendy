@@ -1,0 +1,45 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="logo-section" align="center">
+     <img src="./assets/images/hlogo.png"  width="24%" alt="" />
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <h3 class="title-1">Ordina da mangiare e bere.</h3>
+  <h3 class="title-2">Ricevi tutto direttamente sotto il tuo ombrellone!</h3>
+  <p class="qr-title">Inquadra il QR Code per accedere al menu</p>
+  <div class="scanner-section">
+    <ion-icon
+      class="arrow-icon"
+      src="./assets/svg-icon/arrow-down-left.svg"
+    ></ion-icon>
+    <div class="barcode-section" (click)="scanBarcode()">
+      <div class="barcode">
+        <img src="./assets/svg-icon/barcode.svg" alt="" />
+        <p class="qr-code-title">Scan QR Code</p>
+      </div>
+    </div>
+  </div>
+  <p class="non-rec-title">Non riesci ad accedere con il QR code ?</p>
+  <ion-input
+    placeholder="Inseriscl qui li codice..."
+    class="input-box"
+  ></ion-input>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar >
+    <!-- <p class="ion-text-center" *ngIf="!isCheckOut">
+      Carrello: <span>0,00 €</span>
+    </p> -->
+    <p
+      class="ion-text-center checkout-sec"
+      (click)="this.goToHome();"
+     
+    >
+      <span class="accedi">Accedi</span>
+    </p>
+  </ion-toolbar>
+</ion-footer>
+

@@ -1,0 +1,72 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button class="btn-profile"></ion-back-button>
+      
+    </ion-buttons>
+    <div class="logo-section">
+      <img src="./assets/images/hlogo.png"  width="30%" alt="" />
+    </div>
+    <!-- <ion-title>Home</ion-title> -->
+    <ion-buttons slot="end">
+      <ion-button fill="clear" class="btn-filter">
+        <ion-icon
+          slot="icon-only"
+          src="./assets/svg-icon/filter.svg"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <div style="padding:10px">
+    <ion-searchbar mode="md" placeholder="Cerca..."></ion-searchbar>
+  </div>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager="false" [options]="slideOpts">
+    <ion-slide *ngFor="let category of categoryData">
+      <div (click)="getProductList2(category?.id)" class="menu-name">
+        <p class="menu-title">{{category?.name}}</p>
+      </div>
+    </ion-slide>
+  </ion-slides>
+  <div class="ion-padding-end">
+    <div class="active-menu-section">
+      <h2 *ngIf="this.idcate === 'BIB'" class="item-title">Bibite</h2>
+      <h2 *ngIf="this.idcate === 'CAFFE'" class="item-title">Caffetteria</h2>
+      <h2 *ngIf="this.idcate === 'BIR'" class="item-title">Birre</h2>
+      <div class="item-image-section">
+        <img *ngIf="this.idcate === 'BIB'" src="./assets/images/bibite.png" alt="" />
+        <img *ngIf="this.idcate === 'CAFFE'" src="./assets/images/caffetteria.png" alt="" />
+        <img *ngIf="this.idcate === 'BIR'" src="./assets/images/birra.png" alt="" />
+      </div>
+    </div>
+    <ion-item lines="none" *ngFor="let product of productsData" style="margin-bottom:8px;">
+      <ion-label >
+        <h2 class="name-title">{{product?.name}}</h2>
+        <p class="desc-text">{{product?.desc}}</p>
+      </ion-label>
+      <div slot="end" class="right-section">
+        <p class="price-tag">€ {{product?.price}}</p>
+        <a class="btn-add" (click)="doAddToCart(product)">
+          <ion-icon slot="icon-only" src="./assets/svg-icon/add.svg"></ion-icon>
+        </a>
+      </div>
+    </ion-item>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar >
+    <!-- <p class="ion-text-center" *ngIf="!isCheckOut">
+      Carrello: <span>0,00 €</span>
+    </p> -->
+    <p
+      class="ion-text-center checkout-sec"
+      
+      (click)="goToOrderCart()"
+    >
+      Checkout: <span>{{total}} €</span>
+    </p>
+  </ion-toolbar>
+</ion-footer>
